@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.gtyyx</groupId>
+	<artifactId>springboot-jsperreport</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>springboot-jsperreport</name>
+	<description>springboot-jsperreport</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- jasperreports Start -->    
+    <!-- 该包的作用完成ireport中Preview按扭功能。通过该包可以通过java来ireport生成摸班（.jrxml或.jasper)填充数据源并导出pdf,excel,html等格式文件 -->
+    <dependency>
+        <groupId>net.sf.jasperreports</groupId>
+        <artifactId>jasperreports</artifactId>
+        <version>6.0.3</version>
+    </dependency>
+   <dependency> 
+    <!-- 生成pdf所依赖的包 -->
+       <groupId>com.itextpdf</groupId>  
+       <artifactId>itextpdf</artifactId>  
+       <version>5.5.11</version>  
+   </dependency>  
+   <dependency>  
+       <groupId>com.itextpdf</groupId>  
+       <artifactId>itext-pdfa</artifactId>  
+       <version>5.5.11</version>  
+   </dependency>  
+   <dependency>  
+       <groupId>com.itextpdf</groupId>  
+       <artifactId>itext-asian</artifactId>  
+       <version>5.2.0</version>  
+   </dependency>  
+   <!--将.jrxml编译成.jasper.如果你不使用java编译，而使用ireport工具编译则无须导入该 包  -->
+   <dependency>
+     <groupId>org.codehaus.groovy</groupId>
+     <artifactId>groovy-all</artifactId>
+     <version>2.4.13</version>
+  </dependency>
+  
+  <dependency>
+     <groupId>com.lowagie</groupId>
+     <artifactId>itext</artifactId>
+     <version>2.1.7</version>
+  </dependency>     
+   <!-- jasperreports End -->
+   
+   <!-- 解决生成PDF中文问题必须的导入的 iTextAsian.jar-->
+			<dependency>
+			    <groupId>com.itextpdf</groupId>
+			    <artifactId>iTextAsian</artifactId>
+			    <version>1.0</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/com.itextpdf/itext-asian -->
+			 <dependency>
+			    <groupId>com.itextpdf</groupId>
+			    <artifactId>itext-asian</artifactId>
+			    <version>5.2.0</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+			<dependency>
+			    <groupId>com.itextpdf</groupId>
+			    <artifactId>itextpdf</artifactId>
+			    <version>5.4.3</version>
+			</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
